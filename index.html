@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Image Gallery For Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="img_box" class="full">
+        <div class="shadow1"></div>
+        <div class="shadow2"></div>
+        <img src="./bg1.jpg" id="smallImg">
+    </div>
+    <div class="imageList">
+        <ul>
+            <li onclick="onWebsite()">WEBSITE</li>
+            <li onclick="onMobileApp()">MOBILE APP</li>
+            <li onclick="onMarketing()">MARKETING</li>
+            <li onclick="onSoftware()">SOFTWARE</li>
+        </ul>
+    </div>
+
+    <div class="btn_box" onclick="imageSize()">
+        <span id="meuIcon">&#9776</span>
+    </div>
+
+    <script>
+        var smallImg = document.getElementById("smallImg");
+        var imgBox = document.getElementById("img_box");
+        var meuIcon = document.getElementById("meuIcon");
+
+        function onWebsite(){
+            smallImg.src = "./bg1.jpg";
+        }
+
+        function onMobileApp(){
+            smallImg.src = "./bg2.jpg";
+        }
+
+        function onMarketing(){
+            smallImg.src = "./bg3.jpeg";
+        }
+
+        function onSoftware(){
+            smallImg.src = "./bg4.avif";
+        }
+
+        function imageSize(){
+            if(imgBox.className == "small"){
+                imgBox.className = "full";
+                meuIcon.innerHTML = "&#9776";
+            }
+            else{
+                imgBox.className = "small";
+                meuIcon.innerHTML = "&#10006";
+            }
+        }
+    </script>
+</body>
+</html>
